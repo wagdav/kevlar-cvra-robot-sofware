@@ -8,9 +8,9 @@ artifacts:
 
 - name: gcc-arm-embedded
   docker_image:
-    context: src/docker/gcc-arm-embedded
+    context: robot-software.git/ci/dockerfiles/gcc-arm-embedded
   need:
-    - src
+    - robot-software.git
 
 - name: build
   script: src/build.sh
