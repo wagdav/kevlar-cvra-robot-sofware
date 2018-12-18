@@ -3,16 +3,18 @@ artifacts:
 - name: src
   source: .
 
-- name: github
+- name: robot-software.git
   source: https://github.com/cvra/robot-software.git
 
 - name: gcc-arm-embedded
   docker_image:
-    context: github/robot-software/ci/dockerfiles/gcc-arm-embedded
+    context: src/docker/gcc-arm-embedded
+  need:
+    - src
 
 - name: build
   script: src/build.sh
   need:
     - src
-    - github
+    - robot-software.git
     - gcc-arm-embedded

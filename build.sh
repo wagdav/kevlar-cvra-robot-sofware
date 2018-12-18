@@ -1,7 +1,7 @@
 #!/bin/sh
 set -ex
 
-cd github/master-firmware || exit
+cd robot-software.git/master-firmware || exit
 git submodule update --init --recursive
 packager
 make protoc
