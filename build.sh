@@ -7,4 +7,3 @@ packager
 make protoc
 make dsdlc
 make
-make flash
