@@ -1,0 +1,18 @@
+---
+artifacts:
+- name: src
+  source: .
+
+- name: github
+  source: https://github.com/cvra/robot-software.git
+
+- name: gcc-arm-embedded
+  docker_image:
+    context: github/robot-software/ci/dockerfiles/gcc-arm-embedded
+
+- name: build
+  script: src/build.sh
+  need:
+    - src
+    - github
+    - gcc-arm-embedded
